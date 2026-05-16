@@ -74,6 +74,7 @@ interface PlacementEditorSceneProps {
 
 interface PlacementEditorOverlayProps {
   controller: PlacementEditorController
+  onResetCamera?: () => void
 }
 
 export interface PlacementEditorController {
@@ -1495,7 +1496,7 @@ export function PlacementEditorScene({ controller, renderMode }: PlacementEditor
   )
 }
 
-export function PlacementEditorOverlay({ controller }: PlacementEditorOverlayProps) {
+export function PlacementEditorOverlay({ controller, onResetCamera }: PlacementEditorOverlayProps) {
   const [, navigate] = useLocation()
   const selectedInstance = controller.selectedInstance
   const selectedAsset = selectedInstance
@@ -1541,6 +1542,17 @@ export function PlacementEditorOverlay({ controller }: PlacementEditorOverlayPro
             <ArrowDown size={15} weight="regular" />
             Drop
           </AppButton>
+          {onResetCamera && (
+            <AppButton
+              className="justify-center"
+              onClick={onResetCamera}
+              aria-label="Reset camera to default view"
+              title="Reset camera to default spawn position"
+            >
+              <ArrowUUpLeft size={15} weight="regular" />
+              Reset View
+            </AppButton>
+          )}
         </div>
       </div>
 

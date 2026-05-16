@@ -321,7 +321,12 @@ export function WorldViewer({
           onThumbnailCollapseToggle={() => setSourceThumbnailCollapsed((collapsed) => !collapsed)}
         />
       )}
-      {editing && uiVisible && <PlacementEditorOverlay controller={placementEditor} />}
+      {editing && uiVisible && (
+        <PlacementEditorOverlay
+          controller={placementEditor}
+          onResetCamera={() => charRef.current?.reset()}
+        />
+      )}
     </>
   )
 }
