@@ -33,7 +33,13 @@
       "mcp__plugin_context-mode_context-mode",
       "mcp__claude_ai_Supabase__list_projects",
       "mcp__clickup",
-      "PowerShell(bun *)"
+      "PowerShell(bun *)",
+      "PowerShell(Get-NetTCPConnection *)",
+      "PowerShell(bun install *)",
+      "PowerShell(bun run *)",
+      "PowerShell(node .claude/scripts/project/project-state.mjs --world \"my-room\" --stage-input)",
+      "PowerShell($env:NODE_OPTIONS = \"\"; node .claude/scripts/project/project-state.mjs --world \"my-room\" --stage-input)",
+      "PowerShell($env:NODE_OPTIONS = \"\"; node .claude/scripts/project/show-url.mjs my-room)"
     ],
     "deny": [
       "Bash(rm -rf:*)",
