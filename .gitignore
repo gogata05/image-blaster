@@ -17,3 +17,7 @@ app/.vite/
 
 # OS
 .DS_Store
+
+# Secrets (vault-sync)
+.env
+.mcp.json
